@@ -10,7 +10,7 @@ TNet is designed to identify and classify transposon transposase, predict bacter
 
 All inputs should be in FASTA format.
 
-**Net Components**\
+**TNet Components**\
 TNet comprises two specialized models to accommodate different read lengths:
 * **TNet-s**: Optimized for short reads, enhancing prediction accuracy for sequences ranging from 30 to 50 amino acids or 100 to 150 nucleotides.
 * **TNet-l**: Tailored for long sequences, ensuring robust predictions for full-length contigs or long nucleotide sequences.
