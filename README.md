@@ -15,4 +15,4 @@ TNet comprises two specialized models to accommodate different read lengths:
 * **TNet-s**: Optimized for short reads, enhancing prediction accuracy for sequences ranging from 30 to 50 amino acids or 100 to 150 nucleotides.
 * **TNet-l**: Tailored for long sequences, ensuring robust predictions for full-length contigs or long nucleotide sequences.
 
-![alt text] (https://github.com/patience111/TNet/blob/master/pics/TNet_workflow.jpg)
+![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_workflow.jpg)
