@@ -16,3 +16,39 @@ TNet comprises two specialized models to accommodate different read lengths:
 * **TNet-l**: Tailored for long sequences, ensuring robust predictions for full-length contigs or long nucleotide sequences.
 
 ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_workflow.jpg)
+
+Installation
+------------
+clone the program to your local machine\
+git clone https://github.com/patience111/TNet.git
+
+
+**1. Setting up environment**
+
+
+**1.1 Installation with conda**
+
+
+1.1.1 For **CPU** inference, you could install the program with conda YAML file in the installation directory with the following commands:
+
+```
+cd ./installation 
+conda env create -f TNet-CPU.yml -n TNet-cpu
+conda activate TNet-cpu
+```
+
+(This was tested on Ubuntu 16.04, 20.04; Windows 10, macOS(14.1.1))\
+ ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet-cpu_test_e1.jpg)
+
+  1.1.2 For **GPU** inference, you could install the program with conda YAML file in the installation directory with the following commands:</br>
+```
+cd ./installation
+conda env create -f TNet-GPU.yml -n TNet-gpu
+conda activate TNet-gpu
+```
+(This was tested on Ubuntu 16.04, cuda 10.1, Driver Version: 430.64)\
+    ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet-gpu_test_p1.jpg)
+    ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet-gpu_test_p2.jpg)
+    
+    
+
