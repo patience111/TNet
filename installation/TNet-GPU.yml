@@ -6,7 +6,7 @@ channels:
   - r
 dependencies:
 - python=3.9
-- tensorflow-gpu
+- tensorflow-gpu=2.4.1
 - scikit-learn
 - tqdm=4.56.0
 - biopython=1.79
