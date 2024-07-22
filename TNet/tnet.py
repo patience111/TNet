@@ -12,7 +12,7 @@ formatter_class=argparse.RawDescriptionHelpFormatter,
 description=textwrap.dedent("""\
    TNet: Multitask and multilabel deep neural network for identication and classification bacterial transposon.
    --------------------------------------------------------------------------------------------------------
-    The standlone program is at https://github.com/id-bioinfo/IntNet and  https://github.com/patience111/IntNet.
+    The standlone program is at https://github.com/id-bioinfo/TNet and  https://github.com/patience111/TNet
     The online service will be released later.
 
     The input can be long amino acid sequences(full length/contigs), long nucleotide sequences,
@@ -20,7 +20,7 @@ description=textwrap.dedent("""\
     If your input is short reads you should assign 'tnet-s' model, or if your input is full-length/contigs
     you should assign 'tnet-l' to make the predict.
 
-    The output of the program is a table contain integron group, bacteria host, and associated ARGs(multilabel)
+    The output of the program is a table contain integron group, bacteria host(multilabel), environmental context(multilabel) and associated ARGs(multilabel)
     inferred by the deep learning models.
 
     USAGE:
