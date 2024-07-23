@@ -108,15 +108,18 @@ if we predict the long amino acid sequences by using TNet-l model, we could use 
 python3 ./scripts/tnet.py --input ../Tests/tn3015_100p.fasta --type aa --model tnet-l --outname TNet_test-gpu.txt
 ```
 **output** will be like and saved in the **results** folder: </br>
-![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_results.jpg)</br>
+![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_gpuTest_lsaa.jpg)</br>
 The first column **test_id** is the sequence label of the test sequnece.</br>
-The second column **inti_type** is the "integron" or "non-integron" prediction of the input sequence.\
-The third column **pre_prob** is the integron prediction confidence of the input sequence by the model.\
-The fourth column **bacterial_host** is the bacterial host prediction of the input sequence if it is predicted as integron first.\
-The fifth column **pre_prob** is the bacterial host prediction confidence of the input sequence if it is predicted as integron first.\
-
+The second column **tnp_type** is the "unit transposon" or "non-unit transposon" prediction of the input sequence.\
+The third column **pre_prob** is the unit transposon prediction confidence of the input sequence by the model.\
+The fourth column **bacterial_host** is the multi-label bacterial host prediction of the input sequence if it is predicted as unit transposon first.\
+The fifth column **env_context** is the multi-label prediction of environmental context of the input sequence if it is predicted as unit transposon first.\
 The last column **resistance_category** is the multi-label prediction of asssociated ARGs of the input sequences.
 
-    
+Contribute
+----------
+
+If you'd like to contribute to TNet, check out https://github.com/patience111/TNet. \
+Hope you enjoy INTNet journey, any problem please contact scpeiyao@gmail.com  
     
 
