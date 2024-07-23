@@ -1,4 +1,4 @@
-<img width="1248" alt="image" src="https://github.com/user-attachments/assets/6904c832-8ea2-46dc-a6ac-a49c1948f075">TNet
+TNet
 =====
 Multi-task multilabel deep neural networks for identification and classification of transposons.
 
