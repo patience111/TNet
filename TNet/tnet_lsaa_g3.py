@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelBinarizer
 from tensorflow.keras.utils import to_categorical
 import random
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import tqdm
 #strategy = tf.distribute.MirroredStrategy()
 
@@ -83,7 +83,7 @@ def filter_prediction_batch(seqs):
    # for seq in seqs:
     #    temp = model.predict(np.array([seq]))
      #   predictions.append(temp)
-    temp = filterm.predict(seqs, batch_size = 512)
+    temp = filterm.predict(seqs, batch_size = 256)
     predictions.append(temp)
     return predictions
 
@@ -149,8 +149,8 @@ def tnet_lsaa(input_file, outfile):
     test = [i for i in sio.parse(input_file, 'fasta')]
 
     with open(os.path.join(os.path.dirname(__file__), "../results/" + outfile) , 'a') as f:
-            f.write('test_id' + '\t' + 'inti_type' + '\t' +  'pre_prob' + '\t' + 'bacterial_host' + '\t' + \
-                    'pre_prob' + '\t' + 'resistance_category' + '\n')
+            f.write('test_id' + '\t' + 'tnp_type' + '\t' +  'pre_prob' + '\t' + 'bacterial_host' + '\t' + \
+                    'env_context' + '\t' + 'resistance_category' + '\n')
 
     print('encoding test file...')
     print('reconstruct, simi...')
@@ -176,23 +176,23 @@ def tnet_lsaa(input_file, outfile):
         print('classifying...')
         
         if len(passed_encode) > 0:
-            classifications = classifier.predict(np.stack(passed_encode, axis=0), batch_size = 512)
+            classifications = classifier.predict(np.stack(passed_encode, axis=0), batch_size = 256)
             classification_argmax = np.argmax(classifications, axis=1)
             classification_max = np.max(classifications, axis=1)
             
-            hosts = bac_host.predict(np.stack(passed_encode, axis=0), batch_size = 512)
+            hosts = bac_host.predict(np.stack(passed_encode, axis=0), batch_size = 256)
             hosts1 = np.squeeze(np.where(hosts >= 0.5, 1, 0))
             if len(hosts1.shape) == 1:
                 hosts1 = hosts1.reshape((len(hosts1.shape), len(hosts_prepare)))
             hosts2 = [[x for x, pred in zip(hosts_prepare, y) if pred ==1] for y in hosts1]
 
-            envs = bac_host.predict(np.stack(passed_encode, axis=0), batch_size = 512)
+            envs = exist_env.predict(np.stack(passed_encode, axis=0), batch_size = 256)
             envs1 = np.squeeze(np.where(envs >= 0.5, 1, 0))
             if len(envs1.shape) == 1:
                 envs1 = envs1.reshape((len(envs1.shape), len(envs_prepare)))
             envs2 = [[x for x, pred in zip(envs_prepare, y) if pred ==1] for y in envs1]  
             
-            args = asso_args.predict(np.stack(passed_encode, axis=0), batch_size = 512)
+            args = asso_args.predict(np.stack(passed_encode, axis=0), batch_size = 256)
             args1 = np.squeeze(np.where(args >= 0.5, 1, 0))
             #args2 = np.array(args_prepare)[args1]
             print('args1.shape: ', args1.shape)
