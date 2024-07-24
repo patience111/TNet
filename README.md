@@ -38,7 +38,7 @@ conda activate TNet-cpu
 ```
 
 (This was tested on Ubuntu 16.04, 20.04; Windows 10, macOS(14.1.1))\
- ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet-cpu_test_e1.jpg)
+ ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet-cpu_test_e2.jpg)
 
   1.1.2 For **GPU** inference, you could install the program with conda YAML file in the installation directory with the following commands:</br>
 ```
