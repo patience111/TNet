@@ -47,7 +47,7 @@ conda env create -f TNet-GPU.yml -n TNet-gpu
 conda activate TNet-gpu
 ```
 (This was tested on Ubuntu 16.04, cuda 10.1, Driver Version: 430.64)\
-    ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_gpu-test_p1_e1.jpg)
+    ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_gpu-test_p1.jpg)
     ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_gpu-test_p2.jpg)
 
 
