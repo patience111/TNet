@@ -90,7 +90,7 @@ python tnet.py --input input_path_data --type aa/nt --model tnet-s --outname out
 
 **optional arguments:**</br>
   -h, --help            show this help message and exit</br></br>
-  ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_help-page.jpg)</br>
+  ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_help-page_e1.jpg)</br>
   -i INPUT, --input INPUT </br>
                         the test data as input </br></br>
   -t {aa,nt}, --type {aa,nt} </br>
