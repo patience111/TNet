@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelBinarizer
 from tensorflow.keras.utils import to_categorical
 import random
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+#os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import tqdm
 #strategy = tf.distribute.MirroredStrategy()
 
@@ -226,12 +226,15 @@ def tnet_lsaa(input_file, outfile):
 
                     if idx in notpass_idx:
                         f.write(test_chunk[idx].id + '\t')
-                        f.write('non-Tn' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
+                        f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
             
         if len(passed_encode) == 0:
             print('no seq passed!')
+            with open(os.path.join(os.path.dirname(__file__), "../results/" + outfile) , 'a') as f:
+                f.write(test_chunk[idx].id + '\t')
+                f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
 #            if idx in notpass_idx:
 #                f.write(test_chunk[idx].id + '\t')
 #                f.write('not-passed filter' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
-            pass
+            #pass
 

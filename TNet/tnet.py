@@ -65,5 +65,5 @@ if args.type == 'aa' and args.model == 'tnet-l':
 
 # for AELS_nt -> classifier
 if args.type == 'nt' and args.model == 'tnet-l':
-    import tnet_lsn_g3 as lsnt
+    import tnet_lsnt as lsnt
     lsnt.tnet_lsnt(args.input, args.outname)

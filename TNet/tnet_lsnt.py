@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelBinarizer
 from tensorflow.keras.utils import to_categorical
 import random
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+#os.environ['CUDA_VISIBLE_DEVICES'] = '3'
 import tqdm
 
 #load model
@@ -242,9 +242,13 @@ def tnet_lsnt(input_file, outfile):
                 
                 if idx in notpass_idx:
                     f.write(test_chunk[idx].id + '\t')
-                    f.write('non-Tn' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
+                    f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
 
     if len(passed_encode) == 0:
         print('no seq passed!')
-        pass
+        with open(os.path.join(os.path.dirname(__file__), "../results/" + outfile) , 'a') as f:
+            for idx, ele in enumerate(test_chunk):
+                f.write(test_chunk[idx].id + '\t')
+                f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
+        #pass
     

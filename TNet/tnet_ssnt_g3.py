@@ -352,12 +352,16 @@ with strategy.scope():
 
                         if idx in notpass_idx:
                             f.write(test_chunk[idx].id + '\t')
-                            f.write('non-Tn' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
+                            f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
                         if idx in not_pre_idx:
                             f.write(test_chunk[idx].id + '\t')
                             f.write('<25aa' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
             
             if len(passed_encode) == 0:
                 print('no seq passed!')
+                with open(os.path.join(os.path.dirname(__file__), "../results/" + outfile) , 'a') as f:
+                    for idx, ele in enumerate(test_chunk):
+                        f.write(test_chunk[idx].id + '\t')
+                        f.write('non-tnp' + '\t' + '' + '\t' + '' + '\t' + '' + '\t' + '' + '\n')
                 pass
         
