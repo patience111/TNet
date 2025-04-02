@@ -105,7 +105,7 @@ Example
 ----------
 if we predict the long amino acid sequences by using TNet-l model, we could use command line (if you are in TNet dirctory):
 ```
-python3 ./scripts/tnet.py --input ../Tests/tn3015_100p.fasta --type aa --model tnet-l --outname TNet_test-gpu.txt
+python3 ./TNet/tnet.py --input ../Tests/tn3015_100p.fasta --type aa --model tnet-l --outname TNet_test-gpu.txt
 ```
 **output** will be like and saved in the **results** folder: </br>
 ![alt text](https://github.com/patience111/TNet/blob/master/pics/TNet_gpuTest_lsaa.jpg)</br>
