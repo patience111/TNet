@@ -10,7 +10,7 @@ import tqdm
 import cProfile, pstats, io
 import Bio.Data.CodonTable as bdc
 from itertools import product
-from kito import reduce_keras_model
+#from kito import reduce_keras_model
 
 strategy = tf.distribute.MirroredStrategy()
 #model
